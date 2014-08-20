@@ -31,6 +31,7 @@ Dest = Struct.new(:name, :last_name, :complete_name, :male_female, :transcribed,
     copy_fields :last_name,       # Copies field last_name as is
       :gender => :male_female,    # Copies field gender to field male_female
       :name => [:name, :nickname] # Copies field name to both name and nickname
+
     copy :name, to: :complete_name do |name| # Uses the value returned from the block
       "#{name} #{origin.last_name}"
     end
