@@ -55,3 +55,10 @@ dest.complete_name # => 'John Doe'
 dest.male_female   # => 'M'
 dest.transcribed   # => true
 ```
+
+## Why?
+
+I need (more than I'd like) to sync data between databases. Initially, I created
+just a class to do so. I just needed to copy attributes from one object to another,
+customizing some values eventually. Now, I'm making it available as a Gem, so
+others can benefit from it and I can share it across projects easily.
