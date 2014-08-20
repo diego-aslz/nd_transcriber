@@ -33,6 +33,7 @@ Dest = Struct.new(:name, :last_name, :complete_name, :male_female, :transcribed,
       :name => [:name, :nickname] # Copies field name to both name and nickname
 
     copy :name, to: :complete_name do |name| # Uses the value returned from the block
+      # origin is a method that returns the object we are currently copying data from
       "#{name} #{origin.last_name}"
     end
 
