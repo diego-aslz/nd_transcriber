@@ -19,7 +19,7 @@ Basically, you just need to include `Transcriber` and define a block wich will
 be called every time an object is copied.
 
 ```ruby
-# We are going to copy from Origin objects
+# We are going to copy from Origin objects.
 Origin = Struct.new(:name, :last_name, :gender)
 
 # Dest objects will receive the copied values
@@ -42,6 +42,9 @@ Dest = Struct.new(:name, :last_name, :complete_name, :male_female, :transcribed,
 end
 
 origin = Origin.new('John', 'Doe', 'M')
+
+# The kind of object being copied doesn't matter. It just needs to have the
+# attributes or methods Transcriber was told to copy from.
 dest   = Dest.transcribe(origin)
 
 dest.name          # => 'John'
