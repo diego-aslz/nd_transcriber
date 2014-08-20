@@ -1,0 +1,3 @@
+
+class Transcriber
+end
