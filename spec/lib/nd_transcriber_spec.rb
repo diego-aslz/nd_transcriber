@@ -4,7 +4,7 @@ Origin = Struct.new(:name, :last_name, :gender)
 
 Dest = Struct.new(:name, :last_name, :complete_name, :male_female, :transcribed,
   :nickname) do
-  include Transcriber
+  include NdTranscriber
 
   transcriber do
     copy_fields :last_name,
@@ -18,13 +18,13 @@ Dest = Struct.new(:name, :last_name, :complete_name, :male_female, :transcribed,
 end
 
 Dest2 = Struct.new(:id) do
-  include Transcriber
+  include NdTranscriber
   transcribes_to do |origin|
     new(5) if origin
   end
 end
 
-describe "Transcriber" do
+describe NdTranscriber do
   let(:origin) { Origin.new('John', 'Doe', 'M') }
 
   subject { Dest.transcribe(origin) }

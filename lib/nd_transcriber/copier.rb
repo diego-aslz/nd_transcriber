@@ -1,4 +1,4 @@
-module Transcriber
+module NdTranscriber
   class Copier
     attr_accessor :origin, :dest
 

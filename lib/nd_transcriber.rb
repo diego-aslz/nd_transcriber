@@ -1,4 +1,4 @@
-module Transcriber
+module NdTranscriber
   def self.included base
     base.class_eval do
       extend ClassMethods
@@ -49,4 +49,4 @@ module Transcriber
   end
 end
 
-require 'transcriber/copier'
+require 'nd_transcriber/copier'
