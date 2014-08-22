@@ -4,18 +4,19 @@ This gem provides an easy way to copy attributes around.
 
 ## Installation
 
-This gem is NOT available in Rubygems because there is already a gem named
-`transcriber` that seems not to be being used, but I cannot remove it.
+```bash
+gem install nd_transcriber
+```
 
 Using bundler:
 
 ```ruby
-gem 'transcriber', github: 'nerde/transcriber'
+gem 'nd_transcriber'
 ```
 
 ## Usage
 
-Basically, you just need to include `Transcriber` and define a block wich will
+Basically, you just need to include `NdTranscriber` and define a block wich will
 be called every time an object is copied.
 
 ```ruby
@@ -25,7 +26,7 @@ Origin = Struct.new(:name, :last_name, :gender)
 # Dest objects will receive the copied values
 Dest = Struct.new(:name, :last_name, :complete_name, :male_female, :transcribed,
   :nickname) do
-  include Transcriber
+  include NdTranscriber
 
   transcriber do
     copy_fields :last_name,       # Copies field last_name as is
@@ -45,7 +46,7 @@ end
 origin = Origin.new('John', 'Doe', 'M')
 
 # The kind of object being copied doesn't matter. It just needs to have the
-# attributes or methods Transcriber was told to copy from.
+# attributes or methods NdTranscriber was told to copy from.
 dest   = Dest.transcribe(origin)
 
 dest.name          # => 'John'
