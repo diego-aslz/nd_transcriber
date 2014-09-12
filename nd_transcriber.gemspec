@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'nd_transcriber'
-  s.version     = '0.0.1'
-  s.date        = '2014-08-19'
+  s.version     = '0.0.2'
+  s.date        = '2014-09-12'
   s.summary     = "Copy object's attributes with ease."
   s.description = "This gem provides an easy way to copy attributes around."
   s.authors     = ["Diego Aguir Selzlein"]
